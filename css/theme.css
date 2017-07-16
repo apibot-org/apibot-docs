@@ -342,7 +342,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     color: rgba(255, 255, 255, 0.6);
     position: absolute;
     right: 10px;
-    top: 3px;
+    top: 0px;
     cursor: pointer;
 }
 .searchbox span:hover {
@@ -386,7 +386,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     width: 300px;
     bottom: 0;
     left: 0;
-    
+
     font-weight: normal;
     font-size: 90%;
     line-height: 27px;
@@ -1264,7 +1264,7 @@ pre .copy-to-clipboard:hover {
 
 #sidebar #shortcuts h3 {
     font-family: 'Novacento Sans Wide', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
-    color: white ;   
+    color: white ;
 }
 
 
@@ -1298,4 +1298,3 @@ pre .copy-to-clipboard:hover {
     margin-bottom: 0px;
     margin-top: 5px;
 }
-
