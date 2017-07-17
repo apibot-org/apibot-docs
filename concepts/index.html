@@ -79,9 +79,97 @@
 
  
   
+    <li data-nav-id="/docs/concepts/" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/docs/concepts/">
+        <span>Concepts</span>
+        
+          <i class="fa fa-angle-down fa-lg category-icon"></i>
+        
+        
+      </a>
+      <ul>
+        
+        
+        
+        
+          
+          
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/concepts/execution/" class="dd-item
+     
+      ">
+        <a href="/docs/concepts/execution/">
+        <span>Execution</span> 
+        
+        </a></li>
+     
+  
+ 
+
+          
+        
+          
+          
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/concepts/nodes/" class="dd-item
+     
+      ">
+        <a href="/docs/concepts/nodes/">
+        <span>Nodes</span> 
+        
+        </a></li>
+     
+  
+ 
+
+          
+        
+          
+          
+
+
+ 
+  
+    
+      <li data-nav-id="/docs/concepts/scope/" class="dd-item
+     
+      ">
+        <a href="/docs/concepts/scope/">
+        <span>Scope</span> 
+        
+        </a></li>
+     
+  
+ 
+
+          
+        
+      </ul>
+    </li>
+  
+ 
+
+        
+        
+
+
+ 
+  
     <li data-nav-id="/docs/graphs/" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/docs/graphs/">
@@ -289,7 +377,7 @@
   
     <li data-nav-id="/docs/tutorials/" class="dd-item 
         
-        
+        active
         
         ">
       <a href="/docs/tutorials/">
@@ -360,29 +448,19 @@
                 <span class="links">
                 
 
- Concepts
+
+
+
+ <a href='/docs/'></a> > Concepts
+
+ 
 
    
                 </span>
             </div>
             <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#graph">Graph</a></li>
-<li><a href="#scope">Scope</a></li>
-<li><a href="#execution">Execution</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -399,28 +477,101 @@
 
 
 
-<p>In order to properly use Apibot you will need to understand a handful of concepts. Don&rsquo;t worry it&rsquo;s not rocket science 😉. You don&rsquo;t need to memorize them, but just realize that you can always come back to this page when you forget what something means.</p>
-
-<h4 id="graph">Graph</h4>
-
-<p>A graph is a program written with Apibot. Graphs in Apibot are directed, acyclic and should always have a single starting point:</p>
-
-<blockquote>
-<p><strong>The starting point</strong></p>
-
-<p>A graph&rsquo;s starting point is the only node which does not have predecessors (i.e. no other edge points to it).</p>
-</blockquote>
-
-<h4 id="scope">Scope</h4>
-
-<h4 id="execution">Execution</h4>
-
-<p>####</p>
-
-
 <footer class=" footline" >
 	
 </footer>
+
+
+
+	
+
+	<div class="extra-pagination inner">
+	<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 on 1</span>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post concepts">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/docs/concepts/execution/">Execution</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>The algorithm for executing graphs is actually very simple. Apibot first picks the starting node (which is the only node in the graph without predecessors), invokes the node&rsquo;s function and then concurrently repeats this procedure for every successor of the current node.
+In the image above, the first node is executed first, followed by second and finally third.
+If a node has more than one predecessor, then the node will wait until all predecessors have been executed. <a class="read-more" href="/docs/concepts/execution/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+	   <article class="post concepts">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/docs/concepts/nodes/">Nodes</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>A node is the basic building block of an Apibot test. Every node has a different function which is determined by node&rsquo;s parent graph.
+Node Parent or Parent Graph Every node in Apibot is an instance of either a builtin graph such as the HTTP request or a user made graph (e.g. a graph made by you!).
+A node&rsquo;s behavior is determined by the node&rsquo;s parent. If node A&rsquo;s parent is B we say that node A is an instance of graph B. <a class="read-more" href="/docs/concepts/nodes/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+	   <article class="post concepts">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/docs/concepts/scope/">Scope</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>The Scope is Apibots primary and only data-structure. It is defined as a map strings to anything. You can generally think of the Scope as a Javascript object. Here are a few examples of valid scopes.
+// ✅ a valid scope {} // ✅ a valid scope { username: &quot;bob&quot; } // ✅ valid scope { foo: { bar: [1,2,3] }} // ❌ an invalid scope null // ❌ an invalid scope 1 // ❌ an invalid scope [ { foo: 1 } ]  Every node takes the scope as input and outputs a new scope. <a class="read-more" href="/docs/concepts/scope/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+	
+
+	<div style="margin-bottom:2rem"></div>
+
+	<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 on 1</span>
+	
+</nav>
+
 
 
 
@@ -646,6 +797,74 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -653,8 +872,10 @@
 
 
         
+            <a class="nav nav-prev" href="/docs/tutorials/getting-started/" title="Getting Started"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/docs/graphs/" title="Graphs" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/docs/concepts/execution/" title="Execution" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -681,4 +902,3 @@
 
   </body>
 </html>
-

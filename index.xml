@@ -135,13 +135,35 @@ The purpose of this tutorial is to write a simple program that gets some informa
     </item>
     
     <item>
-      <title>Concepts</title>
-      <link>http://apibot.co/docs/concepts/</link>
+      <title>Execution</title>
+      <link>http://apibot.co/docs/concepts/execution/</link>
       <pubDate>Wed, 12 Jul 2017 22:58:01 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/concepts/</guid>
-      <description>In order to properly use Apibot you will need to understand a handful of concepts. Don&amp;rsquo;t worry it&amp;rsquo;s not rocket science 😉. You don&amp;rsquo;t need to memorize them, but just realize that you can always come back to this page when you forget what something means.
-Graph A graph is a program written with Apibot. Graphs in Apibot are directed, acyclic and should always have a single starting point:</description>
+      <guid>http://apibot.co/docs/concepts/execution/</guid>
+      <description>The algorithm for executing graphs is actually very simple. Apibot first picks the starting node (which is the only node in the graph without predecessors), invokes the node&amp;rsquo;s function and then concurrently repeats this procedure for every successor of the current node.
+In the image above, the first node is executed first, followed by second and finally third.
+If a node has more than one predecessor, then the node will wait until all predecessors have been executed.</description>
+    </item>
+    
+    <item>
+      <title>Nodes</title>
+      <link>http://apibot.co/docs/concepts/nodes/</link>
+      <pubDate>Wed, 12 Jul 2017 22:58:01 +0200</pubDate>
+      
+      <guid>http://apibot.co/docs/concepts/nodes/</guid>
+      <description>A node is the basic building block of an Apibot test. Every node has a different function which is determined by node&amp;rsquo;s parent graph.
+Node Parent or Parent Graph Every node in Apibot is an instance of either a builtin graph such as the HTTP request or a user made graph (e.g. a graph made by you!).
+A node&amp;rsquo;s behavior is determined by the node&amp;rsquo;s parent. If node A&amp;rsquo;s parent is B we say that node A is an instance of graph B.</description>
+    </item>
+    
+    <item>
+      <title>Scope</title>
+      <link>http://apibot.co/docs/concepts/scope/</link>
+      <pubDate>Wed, 12 Jul 2017 22:58:01 +0200</pubDate>
+      
+      <guid>http://apibot.co/docs/concepts/scope/</guid>
+      <description>The Scope is Apibots primary and only data-structure. It is defined as a map strings to anything. You can generally think of the Scope as a Javascript object. Here are a few examples of valid scopes.
+// ✅ a valid scope {} // ✅ a valid scope { username: &amp;quot;bob&amp;quot; } // ✅ valid scope { foo: { bar: [1,2,3] }} // ❌ an invalid scope null // ❌ an invalid scope 1 // ❌ an invalid scope [ { foo: 1 } ]  Every node takes the scope as input and outputs a new scope.</description>
     </item>
     
     <item>

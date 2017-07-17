@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Config :: Apibot | Write integration tests for your API</title>
+    <title>Nodes :: Apibot | Write integration tests for your API</title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
     <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/docs/graphs/config/">
+  <body class="" data-url="/docs/concepts/nodes/">
     <nav id="sidebar" class="">
 
 
@@ -80,14 +80,14 @@
  
   
     <li data-nav-id="/docs/concepts/" class="dd-item 
-        
+        parent
         
         
         ">
       <a href="/docs/concepts/">
         <span>Concepts</span>
         
-          <i class="fa fa-angle-right fa-lg category-icon"></i>
+          <i class="fa fa-angle-down fa-lg category-icon"></i>
         
         
       </a>
@@ -124,7 +124,7 @@
   
     
       <li data-nav-id="/docs/concepts/nodes/" class="dd-item
-     
+     active
       ">
         <a href="/docs/concepts/nodes/">
         <span>Nodes</span> 
@@ -168,14 +168,14 @@
  
   
     <li data-nav-id="/docs/graphs/" class="dd-item 
-        parent
+        
         
         
         ">
       <a href="/docs/graphs/">
         <span>Graphs</span>
         
-          <i class="fa fa-angle-down fa-lg category-icon"></i>
+          <i class="fa fa-angle-right fa-lg category-icon"></i>
         
         
       </a>
@@ -272,7 +272,7 @@
   
     
       <li data-nav-id="/docs/graphs/config/" class="dd-item
-     active
+     
       ">
         <a href="/docs/graphs/config/">
         <span>Config</span> 
@@ -454,7 +454,7 @@
 
 
 
- <a href='/docs/'></a> > <a href='/docs/graphs/'>Graphs</a> > Config
+ <a href='/docs/'></a> > <a href='/docs/concepts/'>Concepts</a> > Nodes
 
  
 
@@ -471,8 +471,12 @@
 <ul>
 <li>
 <ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#arguments">Arguments</a></li>
+<li>
+<ul>
+<li><a href="#node-parent-or-parent-graph">Node Parent or Parent Graph</a></li>
+<li><a href="#nodes-are-functions">Nodes are Functions</a></li>
+<li><a href="#graph-reutilization">Graph Reutilization:</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -485,7 +489,7 @@
         
         <div id="body-inner">
           
-            <h1>Config</h1>
+            <h1>Nodes</h1>
           
 
 
@@ -493,29 +497,29 @@
 
 
 
-<h3 id="description">Description</h3>
+<p>A node is the basic building block of an Apibot test. Every node has a different function which is determined by node&rsquo;s parent graph.</p>
 
-<p>Sets text variables in the scope.</p>
+<h4 id="node-parent-or-parent-graph">Node Parent or Parent Graph</h4>
 
-<h3 id="arguments">Arguments</h3>
+<p>Every node in Apibot is an instance of either a builtin graph such as the <a href="/graphs/http-request">HTTP request</a> or a user made graph (e.g. a graph made by you!).</p>
 
-<p>A list of key-value pairs. The config node will set each key-value pair into the scope.</p>
+<p>A node&rsquo;s behavior is determined by the node&rsquo;s parent. If node <code>A</code>&rsquo;s parent is <code>B</code> we say that node <code>A</code> is an instance of graph <code>B</code>.</p>
 
-<hr />
+<h4 id="nodes-are-functions">Nodes are Functions</h4>
 
-<p><strong>Example:</strong> Setting your initial configuration variables.</p>
+<p>Every node in Apibot is a function that takes a scope as input and returns a scope. The function can be anything, from making an HTTP request and <a href="/graphs/http-request">appending the HTTP request/response to the scope</a>, to a function that <a href="/graphs/config">appends some values to the scope</a>.</p>
 
-<p>The following configuration</p>
+<h4 id="graph-reutilization">Graph Reutilization:</h4>
 
-<p><img src="config-vars.png" alt="" /></p>
+<p>Every graph can be re-used in other graphs by creating instances of the graph. The following screenshots illustrate this point.</p>
 
-<p>Will result in the following scope</p>
+<p><img src="graph-1.png" alt="" /></p>
 
-<pre><code>{
-  url: &quot;https://myapi.co/api/3&quot;,
-  username: &quot;billybob&quot;
-}
-</code></pre>
+<p><code>Graph #1</code> contains two nodes. The first one makes an HTTP request the second one makes an assertion.</p>
+
+<p><img src="graph-2.png" alt="" /></p>
+
+<p><code>Graph #2</code> contains an instance of <code>Graph #1</code>. This is a very simple yet powerful way to achieve reusability. If <code>Graph #1</code> were a very common operation in your business (e.g. authentication), you can use this technique to simplify your Apibot graphs.</p>
 
 
 <footer class=" footline" >
@@ -556,20 +560,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -580,9 +570,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -636,26 +623,6 @@
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -716,6 +683,38 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -756,6 +755,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -769,21 +769,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -801,6 +788,26 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -822,10 +829,10 @@
 
 
         
-            <a class="nav nav-prev" href="/docs/graphs/assert-status/" title="Assert Status"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docs/concepts/execution/" title="Execution"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/graphs/evaljs/" title="Eval JS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/concepts/scope/" title="Scope" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Config :: Apibot | Write integration tests for your API</title>
+    <title>Scope :: Apibot | Write integration tests for your API</title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
     <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/docs/graphs/config/">
+  <body class="" data-url="/docs/concepts/scope/">
     <nav id="sidebar" class="">
 
 
@@ -80,14 +80,14 @@
  
   
     <li data-nav-id="/docs/concepts/" class="dd-item 
-        
+        parent
         
         
         ">
       <a href="/docs/concepts/">
         <span>Concepts</span>
         
-          <i class="fa fa-angle-right fa-lg category-icon"></i>
+          <i class="fa fa-angle-down fa-lg category-icon"></i>
         
         
       </a>
@@ -144,7 +144,7 @@
   
     
       <li data-nav-id="/docs/concepts/scope/" class="dd-item
-     
+     active
       ">
         <a href="/docs/concepts/scope/">
         <span>Scope</span> 
@@ -168,14 +168,14 @@
  
   
     <li data-nav-id="/docs/graphs/" class="dd-item 
-        parent
+        
         
         
         ">
       <a href="/docs/graphs/">
         <span>Graphs</span>
         
-          <i class="fa fa-angle-down fa-lg category-icon"></i>
+          <i class="fa fa-angle-right fa-lg category-icon"></i>
         
         
       </a>
@@ -272,7 +272,7 @@
   
     
       <li data-nav-id="/docs/graphs/config/" class="dd-item
-     active
+     
       ">
         <a href="/docs/graphs/config/">
         <span>Config</span> 
@@ -454,7 +454,7 @@
 
 
 
- <a href='/docs/'></a> > <a href='/docs/graphs/'>Graphs</a> > Config
+ <a href='/docs/'></a> > <a href='/docs/concepts/'>Concepts</a> > Scope
 
  
 
@@ -465,18 +465,7 @@
             </div>
             <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#arguments">Arguments</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -485,37 +474,43 @@
         
         <div id="body-inner">
           
-            <h1>Config</h1>
+            <h1>Scope</h1>
           
 
 
 
 
+<p>The Scope is Apibots primary and only data-structure. It is defined as a map strings to anything. You can generally think of the Scope as a Javascript object. Here are a few examples of valid scopes.</p>
 
+<pre><code>// ✅ a valid scope
+{}          
 
-<h3 id="description">Description</h3>
+// ✅ a valid scope  
+{ username: &quot;bob&quot; }
 
-<p>Sets text variables in the scope.</p>
+// ✅ valid scope
+{ foo: { bar: [1,2,3] }}
 
-<h3 id="arguments">Arguments</h3>
+// ❌ an invalid scope
+null
 
-<p>A list of key-value pairs. The config node will set each key-value pair into the scope.</p>
+// ❌ an invalid scope
+1
 
-<hr />
+// ❌ an invalid scope
+[ { foo: 1 } ]
+</code></pre>
 
-<p><strong>Example:</strong> Setting your initial configuration variables.</p>
+<p>Every <a href="../nodes">node</a> takes the scope as input and outputs a new scope. You will see <a href="/graphs/evaljs">many places</a> in the documentation with little code snippets like this:</p>
 
-<p>The following configuration</p>
-
-<p><img src="config-vars.png" alt="" /></p>
-
-<p>Will result in the following scope</p>
-
-<pre><code>{
-  url: &quot;https://myapi.co/api/3&quot;,
-  username: &quot;billybob&quot;
+<pre><code>(scope) =&gt; {
+  /* some transformation over the scope */
+  scope.someTransformationOverTheScope = {foo: &quot;bar&quot;};
+  return scope;
 }
 </code></pre>
+
+<p>This is a javascript function which takes the scope as argument and returns the modified scope.</p>
 
 
 <footer class=" footline" >
@@ -556,20 +551,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -580,9 +561,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -636,26 +614,6 @@
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -716,6 +674,38 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -756,6 +746,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -763,6 +754,25 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -785,21 +795,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -822,10 +817,10 @@
 
 
         
-            <a class="nav nav-prev" href="/docs/graphs/assert-status/" title="Assert Status"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docs/concepts/nodes/" title="Nodes"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/graphs/evaljs/" title="Eval JS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/concepts/execution/" title="Execution" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

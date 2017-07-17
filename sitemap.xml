@@ -53,7 +53,17 @@
   </url>
   
   <url>
-    <loc>http://apibot.co/docs/concepts/</loc>
+    <loc>http://apibot.co/docs/concepts/execution/</loc>
+    <lastmod>2017-07-12T22:58:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://apibot.co/docs/concepts/nodes/</loc>
+    <lastmod>2017-07-12T22:58:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://apibot.co/docs/concepts/scope/</loc>
     <lastmod>2017-07-12T22:58:01+02:00</lastmod>
   </url>
   
@@ -68,6 +78,12 @@
   
   <url>
     <loc>http://apibot.co/docs/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://apibot.co/docs/concepts/</loc>
+    <lastmod>2017-07-12T22:58:01+02:00</lastmod>
     <priority>0</priority>
   </url>
   
