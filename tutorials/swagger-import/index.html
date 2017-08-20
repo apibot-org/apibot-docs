@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Assert Body :: Apibot | Write integration tests for your API</title>
+    <title>Swagger Import :: Apibot | Write integration tests for your API</title>
     <link rel="shortcut icon" href="/docs/images/favicon.png" type="image/x-icon" />
     <link href="/docs/css/nucleus.css" rel="stylesheet">
     <link href="/docs/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/docs/graphs/assert-body/">
+  <body class="" data-url="/docs/tutorials/swagger-import/">
     <nav id="sidebar" class="">
 
 
@@ -168,14 +168,14 @@
  
   
     <li data-nav-id="/docs/graphs/" class="dd-item 
-        parent
+        
         
         
         ">
       <a href="/docs/graphs/">
         <span>Graphs</span>
         
-          <i class="fa fa-angle-down fa-lg category-icon"></i>
+          <i class="fa fa-angle-right fa-lg category-icon"></i>
         
         
       </a>
@@ -212,7 +212,7 @@
   
     
       <li data-nav-id="/docs/graphs/assert-body/" class="dd-item
-     active
+     
       ">
         <a href="/docs/graphs/assert-body/">
         <span>Assert Body</span> 
@@ -376,14 +376,14 @@
  
   
     <li data-nav-id="/docs/tutorials/" class="dd-item 
-        
+        parent
         
         
         ">
       <a href="/docs/tutorials/">
         <span>Tutorials</span>
         
-          <i class="fa fa-angle-right fa-lg category-icon"></i>
+          <i class="fa fa-angle-down fa-lg category-icon"></i>
         
         
       </a>
@@ -420,7 +420,7 @@
   
     
       <li data-nav-id="/docs/tutorials/swagger-import/" class="dd-item
-     
+     active
       ">
         <a href="/docs/tutorials/swagger-import/">
         <span>Swagger Import</span> 
@@ -474,7 +474,7 @@
 
 
 
- <a href='/docs/'></a> > <a href='/docs/graphs/'>Graphs</a> > Assert Body
+ <a href='/docs/'></a> > <a href='/docs/tutorials/'>Tutorials</a> > Swagger Import
 
  
 
@@ -491,8 +491,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#arguments">Arguments</a></li>
+<li><a href="#what-is-swagger">What is Swagger?</a></li>
+<li><a href="#importing-a-single-swagger-endpoint">Importing a Single Swagger Endpoint</a></li>
+<li><a href="#done">Done!</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -505,7 +506,7 @@
         
         <div id="body-inner">
           
-            <h1>Assert Body</h1>
+            <h1>Swagger Import</h1>
           
 
 
@@ -513,29 +514,41 @@
 
 
 
-<h3 id="description">Description</h3>
+<p>This short tutorial will show you how to import your swagger definitions in Apibot. This assumes
+basic knowledge of how to create and run an Apibot graph. If you do not know what this means, please
+check our <a href="../getting-started">getting started tutorial</a></p>
 
-<p>Performs an assertion over the last HTTP request&rsquo;s body.</p>
+<h3 id="what-is-swagger">What is Swagger?</h3>
 
-<h3 id="arguments">Arguments</h3>
+<p>The OpenAPI Specification, originally known as the Swagger Specification, is a
+specification for describing,  and visualizing REST APIs. In essence it is a standard format for
+describing API.</p>
 
-<p>A javascript function which takes the HTTP response&rsquo;s body and the scope as argument and returns true or false.</p>
+<p>Click <a href="https://en.wikipedia.org/wiki/OpenAPI_Specification">here</a> to learn more about Swagger/OpenAPI.</p>
 
-<hr />
+<h3 id="importing-a-single-swagger-endpoint">Importing a Single Swagger Endpoint</h3>
 
-<p><strong>Example</strong>: Checking that the body contains a specific key.</p>
+<p>To import a swagger endpoint you will need to get a swagger JSON definition of your
+API.</p>
 
-<pre><code>(body, scope) =&gt; {
-  return body.user_id !== null;
-}
-</code></pre>
+<p><img src="swagger-json.png" alt="swagger json" /></p>
 
-<p><strong>Example</strong>: Checking that the body contains a specific value.</p>
+<p>This file is usually available in Swagger UI as a url ending in <code>.json</code> (see image above).</p>
 
-<pre><code>(body, scope) =&gt; {
-  return body.user.id === scope.userId;
-}
-</code></pre>
+<ol>
+<li>Copy the JSON contents into your clipboard.</li>
+<li>Go to Apibot and create a new HTTP node inside an existing graph.</li>
+<li>Click on the green Import from Swagger Button
+<img src="swagger-button.png" alt="swagger button" /></li>
+<li>Paste the Swagger JSON and click on <code>Import</code>.</li>
+<li>Find and select the endpoint to import.</li>
+<li>If you look at your HTTP node&rsquo;s properties you will see that many fields have been pre-filled.</li>
+</ol>
+
+<h3 id="done">Done!</h3>
+
+<p>You have just imported an endpoint from a swagger definition in Apibot. Bear in mind that you will
+probably need to tweak your recently imported HTTP node by e.g. setting values for query params.</p>
 
 
 <footer class=" footline" >
@@ -576,6 +589,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -589,26 +604,6 @@
             
             
                 
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -625,9 +620,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -736,38 +728,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -792,6 +752,62 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -858,10 +874,10 @@
 
 
         
-            <a class="nav nav-prev" href="/docs/graphs/assert/" title="Assert"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/docs/tutorials/getting-started/" title="Getting Started"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/docs/graphs/assert-headers/" title="Assert Headers" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/docs/concepts/" title="Concepts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

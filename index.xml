@@ -135,6 +135,16 @@ The purpose of this tutorial is to write a simple program that gets some informa
     </item>
     
     <item>
+      <title>Swagger Import</title>
+      <link>http://apibot.co/docs/tutorials/swagger-import/</link>
+      <pubDate>Wed, 12 Jul 2017 23:08:38 +0200</pubDate>
+      
+      <guid>http://apibot.co/docs/tutorials/swagger-import/</guid>
+      <description>This short tutorial will show you how to import your swagger definitions in Apibot. This assumes basic knowledge of how to create and run an Apibot graph. If you do not know what this means, please check our getting started tutorial
+What is Swagger? The OpenAPI Specification, originally known as the Swagger Specification, is a specification for describing, and visualizing REST APIs. In essence it is a standard format for describing API.</description>
+    </item>
+    
+    <item>
       <title>Execution</title>
       <link>http://apibot.co/docs/concepts/execution/</link>
       <pubDate>Wed, 12 Jul 2017 22:58:01 +0200</pubDate>
