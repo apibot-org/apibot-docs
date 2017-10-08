@@ -1,146 +1,146 @@
 [
 {
-	"uri": "http://apibot.co/docs/graphs/assert/",
+	"uri": "https://apibot-org.github.io/docs/graphs/assert/",
 	"title": "Assert",
 	"tags": [],
 	"description": "",
 	"content": " Description Performs an assertion over the scope.\nArguments A javascript function which takes the scope as argument and returns true or false.\nExample: Checking that the scope contains a specific key.\n(scope) =\u0026gt; { return scope.username !== null; }  Example: Checking that the scope contains a specific value.\n(scope) =\u0026gt; { return scope.user === {id: \u0026quot;12345\u0026quot;, name: \u0026quot;Bob\u0026quot;}; }  "
 },
 {
-	"uri": "http://apibot.co/docs/graphs/assert-body/",
+	"uri": "https://apibot-org.github.io/docs/graphs/assert-body/",
 	"title": "Assert Body",
 	"tags": [],
 	"description": "",
 	"content": " Description Performs an assertion over the last HTTP request\u0026rsquo;s body.\nArguments A javascript function which takes the HTTP response\u0026rsquo;s body and the scope as argument and returns true or false.\nExample: Checking that the body contains a specific key.\n(body, scope) =\u0026gt; { return body.user_id !== null; }  Example: Checking that the body contains a specific value.\n(body, scope) =\u0026gt; { return body.user.id === scope.userId; }  "
 },
 {
-	"uri": "http://apibot.co/docs/graphs/assert-headers/",
+	"uri": "https://apibot-org.github.io/docs/graphs/assert-headers/",
 	"title": "Assert Headers",
 	"tags": [],
 	"description": "",
 	"content": " Description Performs an assertion over the last HTTP request\u0026rsquo;s headers.\nArguments A javascript function which takes the HTTP response\u0026rsquo;s headers and the scope as argument and returns true or false.\nThe headers are represented as a map from header key to header value.\nExample: Checking that the server returned a specific header:\n(headers, scope) =\u0026gt; { return headers[\u0026quot;x-auth-token\u0026quot;] !== null; }  Example: Checking that the server returned a header with a specific value:\n(headers, scope) =\u0026gt; { return headers[\u0026quot;content-type\u0026quot;] === \u0026quot;application/json\u0026quot;; }  "
 },
 {
-	"uri": "http://apibot.co/docs/graphs/assert-status/",
+	"uri": "https://apibot-org.github.io/docs/graphs/assert-status/",
 	"title": "Assert Status",
 	"tags": [],
 	"description": "",
 	"content": " Description The Assert Status is a type of assertion that verifies the HTTP status code of the last HTTP Response. The graph\u0026rsquo;s execution will be halted if any of the following conditions occur:\n The Http Response\u0026rsquo;s status is not in the range of from \u0026lt;= status \u0026lt;= to. There is no Http Response in the scope.  Arguments  from: The lower bound HTTP status code. to: The upper bound HTTP status code.  "
 },
 {
-	"uri": "http://apibot.co/docs/graphs/config/",
+	"uri": "https://apibot-org.github.io/docs/graphs/config/",
 	"title": "Config",
 	"tags": [],
 	"description": "",
 	"content": " Description Sets text variables in the scope.\nArguments A list of key-value pairs. The config node will set each key-value pair into the scope.\nExample: Setting your initial configuration variables.\nThe following configuration\nWill result in the following scope\n{ url: \u0026quot;https://myapi.co/api/3\u0026quot;, username: \u0026quot;billybob\u0026quot; }  "
 },
 {
-	"uri": "http://apibot.co/docs/graphs/evaljs/",
+	"uri": "https://apibot-org.github.io/docs/graphs/evaljs/",
 	"title": "Eval JS",
 	"tags": [],
 	"description": "",
 	"content": " Description Invokes a javascript function. The result of the invocation will be the new scope.\nArguments A javascript function which takes the current scope as argument and returns the new scope.\nIf you don\u0026rsquo;t return anything, Apibot will assume that you returned an empty map! So always remember to return the resulting scope.\n Example: Setting a \u0026ldquo;random\u0026rdquo; email in the scope.\n(scope) =\u0026gt; { const millis = Date.now(); scope.email = \u0026quot;myemail\u0026quot; + millis + \u0026quot;@gmail.com\u0026quot;; return scope; }  Example: Removing a key from the scope. Assuming the email key is already defined in the scope.\n(scope) =\u0026gt; { delete scope.email; return scope; }  Example: modifying a key in the scope. Assuming the name and lastName keys are already defined in the scope.\n(scope) =\u0026gt; { scope.fullName = scope.name + scope.lastName; return scope; }  "
 },
 {
-	"uri": "http://apibot.co/docs/graphs/extract-body/",
+	"uri": "https://apibot-org.github.io/docs/graphs/extract-body/",
 	"title": "Extract Body",
 	"tags": [],
 	"description": "",
 	"content": " Description Takes a value in the body of the last HTTP request and places it in the scope.\nArguments Property Name: The name that will be given to the extracted contents inside the scope.\nFunction: A javascript function which takes the body as argument and returns anything.\nExample: extracting an authentication token from the body. If the name is \u0026ldquo;token\u0026rdquo; and the functions is set as follows:\n(body) =\u0026gt; { return body.access_token; }  Then the resulting scope will look like:\n{ /* ... */ token: \u0026quot;\u0026lt;some access token\u0026gt;\u0026quot; }  "
 },
 {
-	"uri": "http://apibot.co/docs/graphs/extract-header/",
+	"uri": "https://apibot-org.github.io/docs/graphs/extract-header/",
 	"title": "Extract Header",
 	"tags": [],
 	"description": "",
 	"content": " Description Takes a header last HTTP request and places it in the scope.\nArguments Property Name: The name that will be given to the extracted header inside the scope.\nHeader Name: The name of the http header.\nExample: extracting the APIs version assuming an API that returns versions as headers.\nWill result in the following scope:\n{ /* ... */ version: \u0026quot;\u0026lt;some API version\u0026gt;\u0026quot; }  "
 },
 {
-	"uri": "http://apibot.co/docs/graphs/http-request/",
+	"uri": "https://apibot-org.github.io/docs/graphs/http-request/",
 	"title": "Http Request",
 	"tags": [],
 	"description": "",
 	"content": " Description The \u0026ldquo;Http Request node\u0026rdquo; makes an HTTP request and appends both the Http Request and Http Response to the scope. If an Http Request/Response was already in the scope, it will be overriden.\nArguments  Url: The HTTP request\u0026rsquo;s URL. Example: https://swapi.co/api/people/1. This value is templateable e.g. you can use ${root}/api/people/1 if the variable root is defined in the scope. Method: The HTTP method, e.g. GET Body: The request\u0026rsquo;s body, also sometimes called payload. This value is templateable e.g. assuming your request is sending a JSON body you could send  { \u0026quot;user_id\u0026quot;:\u0026quot;${id}\u0026quot; }   Headers: The request headers. Each row will be a request key/value pair. Both the key and value are templateable e.g. you could have a header with key authorization and value Basic ${basicAuth}.  Templating Every input element in an HTTP request is templateable meaning that you can use the ${variable} syntax to access previously defined elements in the scope. To give an example, you may set the url to ${root}/api/${version}/users/1. When the request is executed the url will be replaced with whatever is in the scope with the key root and version (or fail if the keys are not found).\nTo give another example, assume that the API is protected with basic authentication, and what you can do is send a header with the value Basic ${basicAuth}.\nYou can also use the ${value.nested} syntax to access nested elements.\n"
 },
 {
-	"uri": "http://apibot.co/docs/tutorials/getting-started/",
+	"uri": "https://apibot-org.github.io/docs/tutorials/getting-started/",
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
 	"content": " What is Apibot Apibot is a powerful tool for interacting with REST based APIs. If you need to write integration tests for your REST API and don\u0026rsquo;t know how, you\u0026rsquo;ve come to the right place.\nThe purpose of this tutorial is to write a simple program that gets some information from SWAPI (the Star Wars API) and then performs some assertions to make sure that everything works as expected.\nHello Apibot It all starts by creating a new graph. In Apibot a graph is analogous to a test, but they are much more powerful. You can think of graphs as programs or as executable Flowcharts\nTo create a graph click on the New Graph button as shown in the image below and enter a name for your graph. Make sure to click the executable checkbox.\nIf you don\u0026rsquo;t enter a name for your graph, the graph\u0026rsquo;s name will default to the name of the first node in the graph!\n Lets get started by adding an Http Request node to the graph, and setting some values as shown in the image below:\nAt this point we are ready to run our graph. To run, simply click on the Run button. If everything worked as expected you should see a small dialog popup at the button of the screen. We call this the \u0026ldquo;tasks dialog\u0026rdquo;. It holds information of the current state of your active tasks.\nClick on the Success button. This will take us to the results screen.\nThe results screen shows the result of executing a graph. You can inspect the Http Request and Http Response to see what you got back from the Star Wars API.\nIf you expand the Http Response -\u0026gt; Body -\u0026gt; name you will see that we got Luke Skywalker! Hooray! We have made our first successful Http Request with Apibot. Our next step will be to make a test to ensure that the Star Wars API is working as expected. To achieve this click on Go to graph on the top right corner and add an Assert Status node to the graph. We will purposely write a false assertion just so that we can see our API breaking. Click on the Assert Status node and enter status from 201 to 299 and run your graph again.\nYou can click on the Error link on the tasks dialog to inspect the result.\nAs you can see, the graph now shows a red Assert Status step. If you click on it you will be able to inspect the error. To fix the error, go back to the graph and change the assert status from 200 to 299.\nSuccess! You\u0026rsquo;ve written your first test with Apibot! If you click on the Executables link on the top of the screen you will see a table with a single row, your Swapi Test graph.\n What are executable graphs? Graphs can be split into two groups: executables and non-executable graphs. The difference is, as the name suggests, you can only execute (i.e. \u0026lsquo;run\u0026rsquo;) a graph that has been marked as executables. You can differentiate executable graphs because only executable graphs will be present on the Executables screen.\n\nHooray! You\u0026rsquo;ve written your first Apibot test and are on your way to API automation. On this tutorial you learned:\n How to create a new graph How to use the Http Request node How to use the Assert Status node  Next Step "
 },
 {
-	"uri": "http://apibot.co/docs/tutorials/swagger-import/",
+	"uri": "https://apibot-org.github.io/docs/tutorials/swagger-import/",
 	"title": "Swagger Import",
 	"tags": [],
 	"description": "",
 	"content": " This short tutorial will show you how to import your swagger definitions in Apibot. This assumes basic knowledge of how to create and run an Apibot graph. If you do not know what this means, please check our getting started tutorial\nWhat is Swagger? The OpenAPI Specification, originally known as the Swagger Specification, is a specification for describing, and visualizing REST APIs. In essence it is a standard format for describing API.\nClick here to learn more about Swagger/OpenAPI.\nImporting a Single Swagger Endpoint To import a swagger endpoint you will need to get a swagger JSON definition of your API.\nThis file is usually available in Swagger UI as a url ending in .json (see image above).\n Copy the JSON contents into your clipboard. Go to Apibot and create a new HTTP node inside an existing graph. Click on the green Import from Swagger Button  Paste the Swagger JSON and click on Import. Find and select the endpoint to import. If you look at your HTTP node\u0026rsquo;s properties you will see that many fields have been pre-filled.  Done! You have just imported an endpoint from a swagger definition in Apibot. Bear in mind that you will probably need to tweak your recently imported HTTP node by e.g. setting values for query params.\n"
 },
 {
-	"uri": "http://apibot.co/docs/concepts/execution/",
+	"uri": "https://apibot-org.github.io/docs/concepts/execution/",
 	"title": "Execution",
 	"tags": [],
 	"description": "",
 	"content": "The algorithm for executing graphs is actually very simple. Apibot first picks the starting node (which is the only node in the graph without predecessors), invokes the node\u0026rsquo;s function and then concurrently repeats this procedure for every successor of the current node.\nIn the image above, the first node is executed first, followed by second and finally third.\nIf a node has more than one predecessor, then the node will wait until all predecessors have been executed. In the image above, the two third nodes will be executed concurrently (although not necessarily in parallel). When both third nodes are executed then the fourth will follow.\n"
 },
 {
-	"uri": "http://apibot.co/docs/concepts/nodes/",
+	"uri": "https://apibot-org.github.io/docs/concepts/nodes/",
 	"title": "Nodes",
 	"tags": [],
 	"description": "",
 	"content": " A node is the basic building block of an Apibot test. Every node has a different function which is determined by node\u0026rsquo;s parent graph.\nNode Parent or Parent Graph Every node in Apibot is an instance of either a builtin graph such as the HTTP request or a user made graph (e.g. a graph made by you!).\nA node\u0026rsquo;s behavior is determined by the node\u0026rsquo;s parent. If node A\u0026rsquo;s parent is B we say that node A is an instance of graph B.\nNodes are Functions Every node in Apibot is a function that takes a scope as input and returns a scope. The function can be anything, from making an HTTP request and appending the HTTP request/response to the scope, to a function that appends some values to the scope.\nGraph Reutilization: Every graph can be re-used in other graphs by creating instances of the graph. The following screenshots illustrate this point.\nGraph #1 contains two nodes. The first one makes an HTTP request the second one makes an assertion.\nGraph #2 contains an instance of Graph #1. This is a very simple yet powerful way to achieve reusability. If Graph #1 were a very common operation in your business (e.g. authentication), you can use this technique to simplify your Apibot graphs.\n"
 },
 {
-	"uri": "http://apibot.co/docs/concepts/scope/",
+	"uri": "https://apibot-org.github.io/docs/concepts/scope/",
 	"title": "Scope",
 	"tags": [],
 	"description": "",
 	"content": "The Scope is Apibots primary and only data-structure. It is defined as a map strings to anything. You can generally think of the Scope as a Javascript object. Here are a few examples of valid scopes.\n// ✅ a valid scope {} // ✅ a valid scope { username: \u0026quot;bob\u0026quot; } // ✅ valid scope { foo: { bar: [1,2,3] }} // ❌ an invalid scope null // ❌ an invalid scope 1 // ❌ an invalid scope [ { foo: 1 } ]  Every node takes the scope as input and outputs a new scope. You will see many places in the documentation with little code snippets like this:\n(scope) =\u0026gt; { /* some transformation over the scope */ scope.someTransformationOverTheScope = {foo: \u0026quot;bar\u0026quot;}; return scope; }  This is a javascript function which takes the scope as argument and returns the modified scope.\n"
 },
 {
-	"uri": "http://apibot.co/docs/_header/",
+	"uri": "https://apibot-org.github.io/docs/_header/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": " apibot "
 },
 {
-	"uri": "http://apibot.co/docs/",
+	"uri": "https://apibot-org.github.io/docs/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": " Welcome to Apibot What is Apibot Apibot is a powerful tool for interacting with REST based APIs. It is specifically designed for automating complex interactions with an API and it is therefore a great way to write integration tests for your API.\n Getting Started This is the Apibot documentation page. You will find resources on how to use Apibot and the technical documentation. Click here for a quick tutorial that will get you up to speed with apibot.\nUseful Links  Concepts: Learn the basic building blocks that make Apibot such a powerful tool for writing integration tests. Node Reference Docs: Click here if you are looking for documentation on a particular graph/node. Tutorials: A growing list of tutorials.  "
 },
 {
-	"uri": "http://apibot.co/docs/categories/",
+	"uri": "https://apibot-org.github.io/docs/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://apibot.co/docs/concepts/",
+	"uri": "https://apibot-org.github.io/docs/concepts/",
 	"title": "Concepts",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://apibot.co/docs/graphs/",
+	"uri": "https://apibot-org.github.io/docs/graphs/",
 	"title": "Graphs",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://apibot.co/docs/tags/",
+	"uri": "https://apibot-org.github.io/docs/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://apibot.co/docs/tutorials/",
+	"uri": "https://apibot-org.github.io/docs/tutorials/",
 	"title": "Tutorials",
 	"tags": [],
 	"description": "",

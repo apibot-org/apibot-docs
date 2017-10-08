@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apibot | Write integration tests for your API</title>
-    <link>http://apibot.co/docs/</link>
+    <link>https://apibot-org.github.io/docs/</link>
     <description>Recent content on Apibot | Write integration tests for your API</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 13 Jul 2017 00:25:24 +0200</lastBuildDate>
     
-	<atom:link href="http://apibot.co/docs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://apibot-org.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Assert</title>
-      <link>http://apibot.co/docs/graphs/assert/</link>
+      <link>https://apibot-org.github.io/docs/graphs/assert/</link>
       <pubDate>Thu, 13 Jul 2017 00:25:24 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/graphs/assert/</guid>
+      <guid>https://apibot-org.github.io/docs/graphs/assert/</guid>
       <description> Description Performs an assertion over the scope.
 Arguments A javascript function which takes the scope as argument and returns true or false.
 Example: Checking that the scope contains a specific key.
@@ -26,10 +26,10 @@ Example: Checking that the scope contains a specific key.
     
     <item>
       <title>Assert Body</title>
-      <link>http://apibot.co/docs/graphs/assert-body/</link>
+      <link>https://apibot-org.github.io/docs/graphs/assert-body/</link>
       <pubDate>Thu, 13 Jul 2017 00:25:24 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/graphs/assert-body/</guid>
+      <guid>https://apibot-org.github.io/docs/graphs/assert-body/</guid>
       <description> Description Performs an assertion over the last HTTP request&amp;rsquo;s body.
 Arguments A javascript function which takes the HTTP response&amp;rsquo;s body and the scope as argument and returns true or false.
 Example: Checking that the body contains a specific key.
@@ -39,10 +39,10 @@ Example: Checking that the body contains a specific key.
     
     <item>
       <title>Assert Headers</title>
-      <link>http://apibot.co/docs/graphs/assert-headers/</link>
+      <link>https://apibot-org.github.io/docs/graphs/assert-headers/</link>
       <pubDate>Thu, 13 Jul 2017 00:25:24 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/graphs/assert-headers/</guid>
+      <guid>https://apibot-org.github.io/docs/graphs/assert-headers/</guid>
       <description>Description Performs an assertion over the last HTTP request&amp;rsquo;s headers.
 Arguments A javascript function which takes the HTTP response&amp;rsquo;s headers and the scope as argument and returns true or false.
 The headers are represented as a map from header key to header value.
@@ -52,20 +52,20 @@ Example: Checking that the server returned a specific header:
     
     <item>
       <title>Assert Status</title>
-      <link>http://apibot.co/docs/graphs/assert-status/</link>
+      <link>https://apibot-org.github.io/docs/graphs/assert-status/</link>
       <pubDate>Thu, 13 Jul 2017 00:25:24 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/graphs/assert-status/</guid>
+      <guid>https://apibot-org.github.io/docs/graphs/assert-status/</guid>
       <description>Description The Assert Status is a type of assertion that verifies the HTTP status code of the last HTTP Response. The graph&amp;rsquo;s execution will be halted if any of the following conditions occur:
  The Http Response&amp;rsquo;s status is not in the range of from &amp;lt;= status &amp;lt;= to. There is no Http Response in the scope.  Arguments  from: The lower bound HTTP status code. to: The upper bound HTTP status code.</description>
     </item>
     
     <item>
       <title>Config</title>
-      <link>http://apibot.co/docs/graphs/config/</link>
+      <link>https://apibot-org.github.io/docs/graphs/config/</link>
       <pubDate>Thu, 13 Jul 2017 00:25:24 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/graphs/config/</guid>
+      <guid>https://apibot-org.github.io/docs/graphs/config/</guid>
       <description> Description Sets text variables in the scope.
 Arguments A list of key-value pairs. The config node will set each key-value pair into the scope.
 Example: Setting your initial configuration variables.
@@ -76,10 +76,10 @@ Will result in the following scope
     
     <item>
       <title>Eval JS</title>
-      <link>http://apibot.co/docs/graphs/evaljs/</link>
+      <link>https://apibot-org.github.io/docs/graphs/evaljs/</link>
       <pubDate>Thu, 13 Jul 2017 00:25:24 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/graphs/evaljs/</guid>
+      <guid>https://apibot-org.github.io/docs/graphs/evaljs/</guid>
       <description>Description Invokes a javascript function. The result of the invocation will be the new scope.
 Arguments A javascript function which takes the current scope as argument and returns the new scope.
 If you don&amp;rsquo;t return anything, Apibot will assume that you returned an empty map! So always remember to return the resulting scope.
@@ -89,10 +89,10 @@ If you don&amp;rsquo;t return anything, Apibot will assume that you returned an 
     
     <item>
       <title>Extract Body</title>
-      <link>http://apibot.co/docs/graphs/extract-body/</link>
+      <link>https://apibot-org.github.io/docs/graphs/extract-body/</link>
       <pubDate>Thu, 13 Jul 2017 00:25:24 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/graphs/extract-body/</guid>
+      <guid>https://apibot-org.github.io/docs/graphs/extract-body/</guid>
       <description>Description Takes a value in the body of the last HTTP request and places it in the scope.
 Arguments Property Name: The name that will be given to the extracted contents inside the scope.
 Function: A javascript function which takes the body as argument and returns anything.
@@ -102,10 +102,10 @@ Example: extracting an authentication token from the body. If the name is &amp;l
     
     <item>
       <title>Extract Header</title>
-      <link>http://apibot.co/docs/graphs/extract-header/</link>
+      <link>https://apibot-org.github.io/docs/graphs/extract-header/</link>
       <pubDate>Thu, 13 Jul 2017 00:25:24 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/graphs/extract-header/</guid>
+      <guid>https://apibot-org.github.io/docs/graphs/extract-header/</guid>
       <description> Description Takes a header last HTTP request and places it in the scope.
 Arguments Property Name: The name that will be given to the extracted header inside the scope.
 Header Name: The name of the http header.
@@ -116,40 +116,40 @@ Will result in the following scope:
     
     <item>
       <title>Http Request</title>
-      <link>http://apibot.co/docs/graphs/http-request/</link>
+      <link>https://apibot-org.github.io/docs/graphs/http-request/</link>
       <pubDate>Thu, 13 Jul 2017 00:25:17 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/graphs/http-request/</guid>
+      <guid>https://apibot-org.github.io/docs/graphs/http-request/</guid>
       <description>Description The &amp;ldquo;Http Request node&amp;rdquo; makes an HTTP request and appends both the Http Request and Http Response to the scope. If an Http Request/Response was already in the scope, it will be overriden.
 Arguments  Url: The HTTP request&amp;rsquo;s URL. Example: https://swapi.co/api/people/1. This value is templateable e.g. you can use ${root}/api/people/1 if the variable root is defined in the scope. Method: The HTTP method, e.g. GET Body: The request&amp;rsquo;s body, also sometimes called payload.</description>
     </item>
     
     <item>
       <title>Getting Started</title>
-      <link>http://apibot.co/docs/tutorials/getting-started/</link>
+      <link>https://apibot-org.github.io/docs/tutorials/getting-started/</link>
       <pubDate>Wed, 12 Jul 2017 23:08:38 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/tutorials/getting-started/</guid>
+      <guid>https://apibot-org.github.io/docs/tutorials/getting-started/</guid>
       <description>What is Apibot Apibot is a powerful tool for interacting with REST based APIs. If you need to write integration tests for your REST API and don&amp;rsquo;t know how, you&amp;rsquo;ve come to the right place.
 The purpose of this tutorial is to write a simple program that gets some information from SWAPI (the Star Wars API) and then performs some assertions to make sure that everything works as expected.</description>
     </item>
     
     <item>
       <title>Swagger Import</title>
-      <link>http://apibot.co/docs/tutorials/swagger-import/</link>
+      <link>https://apibot-org.github.io/docs/tutorials/swagger-import/</link>
       <pubDate>Wed, 12 Jul 2017 23:08:38 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/tutorials/swagger-import/</guid>
+      <guid>https://apibot-org.github.io/docs/tutorials/swagger-import/</guid>
       <description>This short tutorial will show you how to import your swagger definitions in Apibot. This assumes basic knowledge of how to create and run an Apibot graph. If you do not know what this means, please check our getting started tutorial
 What is Swagger? The OpenAPI Specification, originally known as the Swagger Specification, is a specification for describing, and visualizing REST APIs. In essence it is a standard format for describing API.</description>
     </item>
     
     <item>
       <title>Execution</title>
-      <link>http://apibot.co/docs/concepts/execution/</link>
+      <link>https://apibot-org.github.io/docs/concepts/execution/</link>
       <pubDate>Wed, 12 Jul 2017 22:58:01 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/concepts/execution/</guid>
+      <guid>https://apibot-org.github.io/docs/concepts/execution/</guid>
       <description>The algorithm for executing graphs is actually very simple. Apibot first picks the starting node (which is the only node in the graph without predecessors), invokes the node&amp;rsquo;s function and then concurrently repeats this procedure for every successor of the current node.
 In the image above, the first node is executed first, followed by second and finally third.
 If a node has more than one predecessor, then the node will wait until all predecessors have been executed.</description>
@@ -157,10 +157,10 @@ If a node has more than one predecessor, then the node will wait until all prede
     
     <item>
       <title>Nodes</title>
-      <link>http://apibot.co/docs/concepts/nodes/</link>
+      <link>https://apibot-org.github.io/docs/concepts/nodes/</link>
       <pubDate>Wed, 12 Jul 2017 22:58:01 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/concepts/nodes/</guid>
+      <guid>https://apibot-org.github.io/docs/concepts/nodes/</guid>
       <description>A node is the basic building block of an Apibot test. Every node has a different function which is determined by node&amp;rsquo;s parent graph.
 Node Parent or Parent Graph Every node in Apibot is an instance of either a builtin graph such as the HTTP request or a user made graph (e.g. a graph made by you!).
 A node&amp;rsquo;s behavior is determined by the node&amp;rsquo;s parent. If node A&amp;rsquo;s parent is B we say that node A is an instance of graph B.</description>
@@ -168,20 +168,20 @@ A node&amp;rsquo;s behavior is determined by the node&amp;rsquo;s parent. If nod
     
     <item>
       <title>Scope</title>
-      <link>http://apibot.co/docs/concepts/scope/</link>
+      <link>https://apibot-org.github.io/docs/concepts/scope/</link>
       <pubDate>Wed, 12 Jul 2017 22:58:01 +0200</pubDate>
       
-      <guid>http://apibot.co/docs/concepts/scope/</guid>
+      <guid>https://apibot-org.github.io/docs/concepts/scope/</guid>
       <description>The Scope is Apibots primary and only data-structure. It is defined as a map strings to anything. You can generally think of the Scope as a Javascript object. Here are a few examples of valid scopes.
 // ✅ a valid scope {} // ✅ a valid scope { username: &amp;quot;bob&amp;quot; } // ✅ valid scope { foo: { bar: [1,2,3] }} // ❌ an invalid scope null // ❌ an invalid scope 1 // ❌ an invalid scope [ { foo: 1 } ]  Every node takes the scope as input and outputs a new scope.</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://apibot.co/docs/_header/</link>
+      <link>https://apibot-org.github.io/docs/_header/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://apibot.co/docs/_header/</guid>
+      <guid>https://apibot-org.github.io/docs/_header/</guid>
       <description> apibot </description>
     </item>
     
